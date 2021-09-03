@@ -20,7 +20,7 @@ exports.formatDtValue = (fyDtValue, OUTPUT_TYPE) => {
             formattedFYDt = fyDtValue.toJSON();
             break;
         default:
-            formattedFYDt = fyDtValue.toJSDate();
+            formattedFYDt = fyDtValue.toObject();
             break;
     }
     return formattedFYDt;
