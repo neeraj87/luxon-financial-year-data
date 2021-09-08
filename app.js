@@ -4,6 +4,33 @@ const fyMonthsController = require("./src/fy-months-controller");
 const fyDaysController = require("./src/fy-days-controller");
 const fyQuartersController = require("./src/fy-quarters-controller");
 
+function getFiscalYearDateRanges(
+    year,
+    month,
+    day,
+    type,
+    outputFormat
+) {
+    let fyRanges = [];
+    let startFyDate = DateTime.fromObject({year: year, month: month, day: day, hour: 0, minute: 0, second: 0});
+
+    switch (type) {
+        case "DAYS":
+            fyRanges = fyDaysController.getFYDays(startFyDate, outputFormat);
+            break;
+        case "MONTHS":
+            fyRanges = fyMonthsController.getFYMonths(startFyDate, outputFormat);
+            break;
+        case "QUARTERS":
+            fyRanges = fyQuartersController.getFYQuarters(startFyDate, outputFormat);
+            break;
+        default:
+            fyRanges = [];
+            break;
+    }
+    return fyRanges;
+}
+
 //https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromObject
 //https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#instance-method-toLocaleString
 //
@@ -13,16 +40,6 @@ const fyQuartersController = require("./src/fy-quarters-controller");
 // console.log(DateTime.fromObject({year: 2021, month: 5, day: 29, hour: 0, minute: 0, second: 0}).plus({months: 12, hours: 8.3}).toLocaleString(DateTime.DATETIME_SHORT));
 
 let startFyDate = DateTime.fromObject({year: 2021, month: 4, day: 1, hour: 0, minute: 0, second: 0});
-
-//console.log(new DateTime(startFyDate).plus({days: 30}).toLocaleString(DateTime.DATETIME_SHORT));
-
-let fyEndDt = getFYEndDateTime(startFyDate);
-
-// console.log(formatDtValue(fyEndDt, "MILLIS"));
-// console.log(formatDtValue(fyEndDt, "OBJECT"));
-// console.log(formatDtValue(fyEndDt, "LOCALE"));
-// console.log(formatDtValue(fyEndDt, "JSON"));
-// console.log(formatDtValue(fyEndDt));
 
 // let fyMonths = fyMonthsController.getFYMonths(startFyDate, "LOCALE");
 // console.log(`fyMonths: ${JSON.stringify(fyMonths)}`);
@@ -36,7 +53,7 @@ let fyEndDt = getFYEndDateTime(startFyDate);
 //week bucket 1: Sunday > Saturday
 //week bucket 2: Monday > Sunday
 //week bucket 3: Saturday > Friday
-// function getFYInWeeks(fyStartDt, fyEndDt, OUTPUT_FORMAT) {
+// function getFYInWeeks(fyStartDt, OUTPUT_FORMAT) {
 //     let financialYearWeeks = [];
 
 //     for (let index = 0; index < 52; index++) {
@@ -57,7 +74,4 @@ let fyEndDt = getFYEndDateTime(startFyDate);
 //     return financialYearWeeks;
 // }
 
-function getFYEndDateTime(fyStartDt) {
-    //return DateTime.fromMillis(fyStartDt).plus({months: 12}).minus({days: 1}).plus({hours: 11, minutes: 59, seconds: 59});
-    return new DateTime(fyStartDt).plus({months: 12}).minus({days: 1}).plus({hours: 11, minutes: 59, seconds: 59});
-}
+module.exports = getFiscalYearDateRanges;
