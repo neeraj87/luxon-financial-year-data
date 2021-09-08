@@ -31,6 +31,10 @@ function getFiscalYearDateRanges(
     return fyRanges;
 }
 
+function getFiscalYearEnd() {
+    console.log(`Coming Soon`);
+}
+
 //https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromObject
 //https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#instance-method-toLocaleString
 //
@@ -74,4 +78,4 @@ let startFyDate = DateTime.fromObject({year: 2021, month: 4, day: 1, hour: 0, mi
 //     return financialYearWeeks;
 // }
 
-module.exports = getFiscalYearDateRanges;
+module.exports = { getFiscalYearDateRanges, getFiscalYearEnd };
