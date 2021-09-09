@@ -1,0 +1,11 @@
+{
+    "all": true,
+    "reporter": [
+        "text",
+        "text-summary"
+    ],
+    "include": [
+        "src/**/*.js",
+        "utilities/**/*.js"
+    ]
+}
