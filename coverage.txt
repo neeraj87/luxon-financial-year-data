@@ -2,8 +2,8 @@
 
   Fiscal Year Date Ranges
     Days within a given fiscal year
-      ✔ should returns all days within a given fiscal year that starts from first of a month (135ms)
-      ✔ should returns all days within a given fiscal year that does not starts from first of a month (50ms)
+      ✔ should returns all days within a given fiscal year that starts from first of a month (116ms)
+      ✔ should returns all days within a given fiscal year that does not starts from first of a month (48ms)
     Months within a given fiscal year
       ✔ should return all the months within a given fiscal year
     Quarters within a given fiscal year
@@ -19,7 +19,7 @@
       ✔ should return luxon object as default formatted result when format type is not specified
 
 
-  10 passing (199ms)
+  10 passing (176ms)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -32,3 +32,10 @@ All files                   |     100 |      100 |     100 |     100 |
  utilities                  |     100 |      100 |     100 |     100 |                   
   date-time-formater.js     |     100 |      100 |     100 |     100 |                   
 ----------------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 66/66 )
+Branches     : 100% ( 12/12 )
+Functions    : 100% ( 5/5 )
+Lines        : 100% ( 64/64 )
+================================================================================
