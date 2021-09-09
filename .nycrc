@@ -7,5 +7,6 @@
     "include": [
         "src/**/*.js",
         "utilities/**/*.js"
-    ]
+    ],
+    "lines": 80
 }
