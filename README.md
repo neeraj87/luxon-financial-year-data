@@ -15,9 +15,11 @@
 
 1. Returns list of days within a given fiscal year
 
-2. Returns list of months within a given fiscal year
+2. Returns list of weeks (week starts from Monday and ends on Sunday) within a given fiscal year
 
-3. Returns list of quarters within a given fiscal year
+3. Returns list of months within a given fiscal year
+
+4. Returns list of quarters within a given fiscal year
 
   
 

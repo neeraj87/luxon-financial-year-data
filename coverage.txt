@@ -2,8 +2,8 @@
 
   Fiscal Year Date Ranges
     Days within a given fiscal year
-      ✔ should returns all days within a given fiscal year that starts from first of a month (104ms)
-      ✔ should returns all days within a given fiscal year that does not starts from first of a month (46ms)
+      ✔ should returns all days within a given fiscal year that starts from first of a month (123ms)
+      ✔ should returns all days within a given fiscal year that does not starts from first of a month (60ms)
     Weeks within a given fiscal year
       ✔ should return all the weeks within a given fiscal year
     Months within a given fiscal year
@@ -24,7 +24,7 @@
       ✔ should return luxon object as default formatted result when format type is not specified
 
 
-  13 passing (172ms)
+  13 passing (216ms)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 

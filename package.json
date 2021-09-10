@@ -1,6 +1,6 @@
 {
   "name": "luxon-financial-year-data",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Luxon financial year date ranges",
   "main": "app.js",
   "scripts": {
@@ -10,6 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/neeraj87/luxon-financial-year-data.git"
   },
+  "keywords": [
+    "fiscal year",
+    "financial year",
+    "luxon",
+    "date time",
+    "quarters",
+    "months",
+    "date ranges"
+  ],
   "author": "Neeraj Jadhav",
   "license": "ISC",
   "bugs": {
