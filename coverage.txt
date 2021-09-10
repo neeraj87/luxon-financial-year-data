@@ -2,12 +2,17 @@
 
   Fiscal Year Date Ranges
     Days within a given fiscal year
-      ✔ should returns all days within a given fiscal year that starts from first of a month (116ms)
-      ✔ should returns all days within a given fiscal year that does not starts from first of a month (48ms)
+      ✔ should returns all days within a given fiscal year that starts from first of a month (104ms)
+      ✔ should returns all days within a given fiscal year that does not starts from first of a month (46ms)
+    Weeks within a given fiscal year
+      ✔ should return all the weeks within a given fiscal year
     Months within a given fiscal year
       ✔ should return all the months within a given fiscal year
     Quarters within a given fiscal year
       ✔ should return all the quarters within a given fiscal year
+    Fiscal Year End Date
+      ✔ should return the end date of fiscal year where the day starts from first of a month
+      ✔ should return the end date of fiscal year where the day does not start from first of a month
 
   Utilities
     Date Time Formatter
@@ -19,23 +24,25 @@
       ✔ should return luxon object as default formatted result when format type is not specified
 
 
-  10 passing (176ms)
+  13 passing (172ms)
 
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |     100 |      100 |     100 |     100 |                   
- src                        |     100 |      100 |     100 |     100 |                   
+All files                   |     100 |    92.86 |     100 |     100 |                   
+ src                        |     100 |     87.5 |     100 |     100 |                   
   fy-days-controller.js     |     100 |      100 |     100 |     100 |                   
+  fy-end-controller.js      |     100 |      100 |     100 |     100 |                   
   fy-months-controller.js   |     100 |      100 |     100 |     100 |                   
   fy-quarters-controller.js |     100 |      100 |     100 |     100 |                   
+  fy-weeks-controller.js    |     100 |       50 |     100 |     100 | 30                
  utilities                  |     100 |      100 |     100 |     100 |                   
   date-time-formater.js     |     100 |      100 |     100 |     100 |                   
 ----------------------------|---------|----------|---------|---------|-------------------
 
 =============================== Coverage summary ===============================
-Statements   : 100% ( 66/66 )
-Branches     : 100% ( 12/12 )
-Functions    : 100% ( 5/5 )
-Lines        : 100% ( 64/64 )
+Statements   : 100% ( 86/86 )
+Branches     : 92.86% ( 13/14 )
+Functions    : 100% ( 7/7 )
+Lines        : 100% ( 84/84 )
 ================================================================================

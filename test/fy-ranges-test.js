@@ -1,10 +1,15 @@
 const expect  = require("chai").expect;
 const { DateTime } = require("luxon");
+
 const fyDaysController = require("../src/fy-days-controller");
 const fyMonthsController = require("../src/fy-months-controller");
 const fyQuartersController = require("../src/fy-quarters-controller");
+const fyWeeksController = require("../src/fy-weeks-controller");
+const fyEndController = require("../src/fy-end-controller");
+
 const fyDaysResult = require("./expected-outputs/fyDays.json");
 const fyDaysNotStartingFromFirstResult = require("./expected-outputs/fyDaysNotStartingFromFirst.json");
+const fyWeeksExpectedResult = require("./expected-outputs/fyWeeks.json");
 
 describe("Fiscal Year Date Ranges", function() {
 
@@ -24,6 +29,17 @@ describe("Fiscal Year Date Ranges", function() {
             let fyDays = fyDaysController.getFYDays(startFyDate, "LOCALE");
 
             expect(fyDays).to.deep.equal(fyDaysNotStartingFromFirstResult);
+        });
+    });
+
+    describe("Weeks within a given fiscal year", function() {
+
+        it("should return all the weeks within a given fiscal year", function() {
+            let startFyDate = DateTime.fromObject({year: 2021, month: 1, day: 1, hour: 0, minute: 0, second: 0});
+
+            let fyWeeks = fyWeeksController.getFYWeeks(startFyDate, "LOCALE");
+
+            expect(fyWeeks).to.deep.equal(fyWeeksExpectedResult);
         });
     });
 
@@ -143,6 +159,24 @@ describe("Fiscal Year Date Ranges", function() {
             }];
 
             expect(fyQuarters).to.deep.equal(expectedResult);
+        });
+    });
+
+    describe("Fiscal Year End Date", function() {
+        it("should return the end date of fiscal year where the day starts from first of a month", function() {
+            let startFyDate = DateTime.fromObject({year: 2021, month: 4, day: 1, hour: 0, minute: 0, second: 0});
+    
+            let fyEndDt = fyEndController.getFYEnd(startFyDate, "LOCALE");
+    
+            expect(fyEndDt).to.equal("31/3/2022, 11:59 pm");
+        });
+
+        it("should return the end date of fiscal year where the day does not start from first of a month", function() {
+            let startFyDate = DateTime.fromObject({year: 2021, month: 4, day: 6, hour: 0, minute: 0, second: 0});
+    
+            let fyEndDt = fyEndController.getFYEnd(startFyDate, "LOCALE");
+    
+            expect(fyEndDt).to.equal("5/4/2022, 11:59 pm");
         });
     });
 });
