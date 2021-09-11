@@ -1,9 +1,14 @@
 
 
+  Fiscal years for a given country code
+    ✔ should return future 5 fiscal years where the country code is US
+    ✔ should return past 15 fiscal years where the country code is IN
+    ✔ should return error message if there is an incorrect country code
+
   Fiscal Year Date Ranges
     Days within a given fiscal year
-      ✔ should returns all days within a given fiscal year that starts from first of a month (123ms)
-      ✔ should returns all days within a given fiscal year that does not starts from first of a month (60ms)
+      ✔ should returns all days within a given fiscal year that starts from first of a month (85ms)
+      ✔ should returns all days within a given fiscal year that does not starts from first of a month (40ms)
     Weeks within a given fiscal year
       ✔ should return all the weeks within a given fiscal year
     Months within a given fiscal year
@@ -24,25 +29,26 @@
       ✔ should return luxon object as default formatted result when format type is not specified
 
 
-  13 passing (216ms)
+  16 passing (170ms)
 
-----------------------------|---------|----------|---------|---------|-------------------
-File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------------------|---------|----------|---------|---------|-------------------
-All files                   |     100 |    92.86 |     100 |     100 |                   
- src                        |     100 |     87.5 |     100 |     100 |                   
-  fy-days-controller.js     |     100 |      100 |     100 |     100 |                   
-  fy-end-controller.js      |     100 |      100 |     100 |     100 |                   
-  fy-months-controller.js   |     100 |      100 |     100 |     100 |                   
-  fy-quarters-controller.js |     100 |      100 |     100 |     100 |                   
-  fy-weeks-controller.js    |     100 |       50 |     100 |     100 | 30                
- utilities                  |     100 |      100 |     100 |     100 |                   
-  date-time-formater.js     |     100 |      100 |     100 |     100 |                   
-----------------------------|---------|----------|---------|---------|-------------------
+-------------------------------------|---------|----------|---------|---------|-------------------
+File                                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------------------------|---------|----------|---------|---------|-------------------
+All files                            |     100 |    95.83 |     100 |     100 |                   
+ src                                 |     100 |    94.44 |     100 |     100 |                   
+  country-fiscal-years-controller.js |     100 |      100 |     100 |     100 |                   
+  fy-days-controller.js              |     100 |      100 |     100 |     100 |                   
+  fy-end-controller.js               |     100 |      100 |     100 |     100 |                   
+  fy-months-controller.js            |     100 |      100 |     100 |     100 |                   
+  fy-quarters-controller.js          |     100 |      100 |     100 |     100 |                   
+  fy-weeks-controller.js             |     100 |       50 |     100 |     100 | 30                
+ utilities                           |     100 |      100 |     100 |     100 |                   
+  date-time-formater.js              |     100 |      100 |     100 |     100 |                   
+-------------------------------------|---------|----------|---------|---------|-------------------
 
 =============================== Coverage summary ===============================
-Statements   : 100% ( 86/86 )
-Branches     : 92.86% ( 13/14 )
-Functions    : 100% ( 7/7 )
-Lines        : 100% ( 84/84 )
+Statements   : 100% ( 116/116 )
+Branches     : 95.83% ( 23/24 )
+Functions    : 100% ( 11/11 )
+Lines        : 100% ( 113/113 )
 ================================================================================
